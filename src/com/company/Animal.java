@@ -1,29 +1,46 @@
 package com.company;
 
 public class Animal {
-    /*final String species;*/
-    private double weight = 20;
+    final String species = "Dog";
+    private double weight=20;
 
-    public Animal () {
-        double weight = 20;
-        this.weight = weight;
+    public boolean isLife()
+    {
+        if (this.weight <= 0)
+        {
+            System.out.println("Zwierze nie zyje");
+            return false;
+        } else {
+            System.out.println("Zwierze zyje");
+            return true;
+        }
     }
-    void feed()
+    public Animal () {
+if (this.species.equals("Dog"))
+        {
+
+            this.weight = 20;
+        }
+    }
+    public void feed()
     {
         double weight1 = 10;
-        double x = this.weight + weight1;
-        System.out.println("Waga została zwieszkona o: " + x);
+        weight=weight+weight1;
+        System.out.println("Waga została zwieszkona o: " + weight1);
+        System.out.println(weight);
     }
-    void takeForAWalk()
+    public void takeForAWalk()
     {
-        double weight2 = 10;
-        if (weight2 < this.weight) {
-            double y = this.weight + weight2;
-            System.out.println("Waga została zmniejszona o: " + y);
+        if(isLife())
+        {
+            double weight2 = 10;
+            weight=weight-weight2;
+            System.out.println("Waga została zmniejszona o: " + weight2);
+            System.out.println(weight);
         }
         else
         {
-            System.out.println("Zwierze nieżyje");
+            System.out.println("ZWIERZE RIP");
         }
     }
 }

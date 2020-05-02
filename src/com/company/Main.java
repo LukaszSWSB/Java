@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int a = 0;
+        int a;
         Scanner scan = new Scanner(System.in);
         Animal animal = new Animal();
         do {
@@ -21,6 +21,8 @@ public class Main {
                 break;
                 case 2: {
                     animal.takeForAWalk();
+                    if (animal.isLife() == false)
+                    { a = 0; }
                 }
                 break;
                 default: {

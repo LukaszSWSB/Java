@@ -8,10 +8,10 @@ public class Animal {
     {
         if (this.weight <= 0)
         {
-            System.out.println("Zwierze nie zyje");
+            System.out.println("The animal is dead");
             return false;
         } else {
-            System.out.println("Zwierze zyje");
+            System.out.println("The animal is alive");
             return true;
         }
     }
@@ -26,8 +26,8 @@ if (this.species.equals("Dog"))
     {
         double weight1 = 10;
         weight=weight+weight1;
-        System.out.println("Waga została zwieszkona o: " + weight1);
-        System.out.println(weight);
+        System.out.println("The weight has been increased by: " + weight1);
+        System.out.println("Animal weight: " + weight);
     }
     public void takeForAWalk()
     {
@@ -35,12 +35,12 @@ if (this.species.equals("Dog"))
         {
             double weight2 = 10;
             weight=weight-weight2;
-            System.out.println("Waga została zmniejszona o: " + weight2);
-            System.out.println(weight);
+            System.out.println("The weight has been reduced by: " + weight2);
+            System.out.println("Animal weight" + weight);
         }
         else
         {
-            System.out.println("ZWIERZE RIP");
+            System.out.println("RIP ANIMAL");
         }
     }
 }

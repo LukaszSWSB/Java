@@ -19,7 +19,7 @@ public class Human {
         }
         else
         {
-            System.out.println("Nie posiadasz samochodu");
+            System.out.println("You don't own a car");
         }
         return true;
     }
@@ -32,18 +32,18 @@ public class Human {
     Boolean setCar(){
         if (car.cost < salary)
         {
-            System.out.println("Udąło ci siękupić samochód za gotówke");
+            System.out.println("You managed to buy the car for cash");
             salary = salary - car.cost;
             return true;
         }
         else if (car.cost/12 < salary)
         {
-            System.out.println("udało CI się kupić samochód na kredyt");
+            System.out.println("you managed to buy a car on credit");
             return true;
         }
         else
         {
-            System.out.println("Nie udało Ci się kupić auta, zacznij lepiej zarabiać");
+            System.out.println("You couldn't buy a car, start earning better");
             return false;
         }
     }

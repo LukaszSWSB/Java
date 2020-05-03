@@ -14,10 +14,10 @@ public class Car {
         String color = this.color;
         int production_date = this.production_date;
         int cost = this.cost;
-        System.out.println("Model samochodu: "+model);
-        System.out.println("Producent samochodu: "+producent);
-        System.out.println("Kolor samochodu: "+color);
-        System.out.println("Data produkcji samochodu: "+production_date);
-        System.out.println("koszt samochodu= "+cost);
+        System.out.println("Car model: "+model);
+        System.out.println("Car manufacturer: "+producent);
+        System.out.println("Car color: "+color);
+        System.out.println("Car production date: "+production_date);
+        System.out.println("the cost of the car= "+cost);
     }
 }

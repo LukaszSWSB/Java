@@ -16,9 +16,9 @@ public class Main {
             System.out.println("3. Check account balance");
             System.out.println("4. Withdraw from account 500");
             System.out.println("5. Withdraw from account 1500");
-            System.out.println("6. Zobacz Swój wymarzony samochód");
-            System.out.println("7. Kup Swój wymarzony samochód");
-            System.out.println("8. Zobacz swoje auto");
+            System.out.println("6. See your dream car");
+            System.out.println("7. Buy your dream car");
+            System.out.println("8. See your car");
             System.out.print("Your Choose: ");
             a = scan.nextInt();
             System.out.println();

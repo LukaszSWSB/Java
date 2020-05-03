@@ -16,29 +16,53 @@ public class Main {
             System.out.println("3. Check account balance");
             System.out.println("4. Withdraw from account 500");
             System.out.println("5. Withdraw from account 1500");
+            System.out.println("6. Zobacz Swój wymarzony samochód");
+            System.out.println("7. Kup Swój wymarzony samochód");
+            System.out.println("8. Zobacz swoje auto");
             System.out.print("Your Choose: ");
             a = scan.nextInt();
+            System.out.println();
             switch (a) {
                 case 1: {
                     animal.feed();
+                    System.out.println();
                 }
                 break;
                 case 2: {
                     animal.takeForAWalk();
                     if (animal.isLife() == false)
                     { a = 0; }
+                    System.out.println();
                 }
                 break;
                 case 3: {
                     human.getSalary();
+                    System.out.println();
                 }
                 break;
                 case 4: {
                     human.setSalary(500);
+                    System.out.println();
                 }
                 break;
                 case 5: {
-                    human.setSalary(1500);
+                    human.setSalary(15000);
+                    System.out.println();
+                }
+                break;
+                case 6: {
+                    human.getCar();
+                    System.out.println();
+                }
+                break;
+                case 7: {
+                    human.setCar();
+                    System.out.println();
+                }
+                break;
+                case 8: {
+                    human.getMyCar();
+                    System.out.println();
                 }
                 break;
                 default: {

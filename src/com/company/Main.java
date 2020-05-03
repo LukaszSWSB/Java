@@ -1,5 +1,8 @@
 package com.company;
 
+import devices.Animal;
+import devices.Human;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +12,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Animal animal = new Animal();
         Human human = new Human();
+        Human human1 = new Human();
         do {
             System.out.println("Choose number");
             System.out.println("1. Feeder");

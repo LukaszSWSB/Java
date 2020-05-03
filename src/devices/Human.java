@@ -1,6 +1,7 @@
-package com.company;
+package devices;
 
-import javax.swing.*;
+import devices.Animal;
+import devices.Car;
 
 public class Human {
     public Human() {
@@ -11,7 +12,7 @@ public class Human {
     Animal pet = new Animal();
     private Car car = new Car();
 
-    Boolean getMyCar()
+    public Boolean getMyCar()
     {
         if (setCar() == true)
         {
@@ -24,12 +25,12 @@ public class Human {
         return true;
     }
 
-    void getCar()
+    public void getCar()
     {
         car.Car();
     }
 
-    Boolean setCar(){
+    public Boolean setCar(){
         if (car.cost < salary)
         {
             System.out.println("You managed to buy the car for cash");
@@ -48,7 +49,7 @@ public class Human {
         }
     }
 
-    double getSalary()
+    public double getSalary()
     {
         System.out.println("Payment of the day: " + date);
         System.out.println("Value before returning value= " + salary);
@@ -56,7 +57,7 @@ public class Human {
         System.out.println("Current Account status= " + salary);
         return salary;
     }
-    boolean setSalary(double HowMuch)
+    public boolean setSalary(double HowMuch)
     {
         if (salary < HowMuch) {
             System.out.println("You dont have cash");
@@ -71,7 +72,7 @@ public class Human {
         }
         return true;
     }
-    boolean Deposit(double HowMuch)
+    public boolean Deposit(double HowMuch)
     {
         this.salary = salary + HowMuch;
         return true;

@@ -1,4 +1,4 @@
-package com.company;
+package devices;
 
 public class Animal {
     final String species = "Dog";

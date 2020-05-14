@@ -11,6 +11,7 @@ public class Human {
     double date = 11.05;
     Animal pet = new Animal();
     private Car car = new Car();
+    double Cash;
 
     public Boolean getMyCar()
     {

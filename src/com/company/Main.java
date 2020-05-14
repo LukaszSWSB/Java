@@ -26,7 +26,7 @@ public class Main {
             System.out.println("6. See your dream car");
             System.out.println("7. Buy your dream car");
             System.out.println("8. See your car");
-            System.out.println("9. porównaj dwa takie same auta");
+            System.out.println("9. compare two same cars");
             System.out.println("10. ToString");
             System.out.print("Your Choose: ");
             a = scan.nextInt();

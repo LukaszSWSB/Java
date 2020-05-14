@@ -1,6 +1,7 @@
 package com.company;
 
 import devices.Animal;
+import devices.Car;
 import devices.Human;
 
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class Main {
         int a;
         Scanner scan = new Scanner(System.in);
         Animal animal = new Animal();
+        Car car = new Car();
         Human human = new Human();
         Human human1 = new Human();
         do {
@@ -23,6 +25,8 @@ public class Main {
             System.out.println("6. See your dream car");
             System.out.println("7. Buy your dream car");
             System.out.println("8. See your car");
+            System.out.println("9. porównaj dwa takie same auta");
+            System.out.println("10. ToString");
             System.out.print("Your Choose: ");
             a = scan.nextInt();
             System.out.println();
@@ -66,6 +70,16 @@ public class Main {
                 break;
                 case 8: {
                     human.getMyCar();
+                    System.out.println();
+                }
+                break;
+                case 9: {
+                    car.main();
+                    System.out.println();
+                }
+                break;
+                case 10: {
+                    car.main2();
                     System.out.println();
                 }
                 break;

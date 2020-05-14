@@ -27,7 +27,7 @@ public class Human {
 
     public void getCar()
     {
-        car.Car();
+        car.Car("q","1","1",1,1);
     }
 
     public Boolean setCar(){

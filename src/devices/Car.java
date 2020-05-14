@@ -1,6 +1,6 @@
 package devices;
 
-public class Car {
+public class Car extends Device{
     final String model = "718 Cayman GT4";
     final String producent = "Porsche";
     final String color = "Gold";
@@ -41,8 +41,11 @@ public class Car {
     }
     public static void main2(String... equalsExplanation) {
         Car car1=new Car();
-
         System.out.println(car1);
     }
 
+    @Override
+    public void TurnOn() {
+
+    }
 }

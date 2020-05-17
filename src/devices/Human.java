@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import creatures.Animal;
 
+import javax.swing.text.Style;
+
 public class Human {
     public Human(int id, String name, double salary) {
         this.id = id;
@@ -51,14 +53,15 @@ public class Human {
                     System.out.print("Your Name: ");
                     Name2 = scan.nextLine();
                 } while (Name2.equals(human.get(tmp).Name) == false);
-                System.out.println("Hello " + human.get(tmp).Name);
+                System.out.println("Hello " + human.get(tmp).Name + " " + human.get(tmp).id);
             } else {
                 System.out.println("Hello" + human.get(tmp).Name + " " + human.get(tmp).id);
             }
         do {
+            System.out.println();
             System.out.println("Choose number");
-            System.out.println("1. Feeder your pet");
-            System.out.println("2. TakeForAWalk whit your pet");
+            System.out.println("1. Buy Animal");
+            System.out.println("2. Do something with your pet");
             System.out.println("3. Check account balance");
             System.out.println("4. Withdraw from account 500");
             System.out.println("5. Withdraw from account 1500");
@@ -72,15 +75,17 @@ public class Human {
             System.out.println();
             switch (a) {
                 case 1: {
-                    animal.feed();
+                    animal.NewAnimal();
+                    if(salary > 500) {
+                        salary = salary - 500;
+                    }else {
+                        System.out.println("You don't have cash");
+                    }
                     System.out.println();
                 }
                 break;
                 case 2: {
-                    animal.takeForAWalk();
-                    if (animal.isLife() == false) {
-                        a = 0;
-                    }
+                    animal.MyAnimal();
                     System.out.println();
                 }
                 break;
@@ -134,8 +139,13 @@ public class Human {
 
     public void getMyCar()
     {
-        if (setCar() == true)
+        if (setCar() == 1)
         {
+            System.out.println("You have Car:");
+            getCar();
+        }
+        else if(setCar() == 2) {
+            System.out.println("You have Car on credit");
             getCar();
         }
         else
@@ -149,31 +159,36 @@ public class Human {
         car.Car("q","1","1",1,1);
     }
 
-    public boolean setCar(){
+    public int setCar(){
         if (car.cost < salary)
         {
             System.out.println("You managed to buy the car for cash");
             salary = salary - car.cost;
-            return true;
+            human.get(tmp).car.Car("1","1","1",1,1);
+            return 1;
         }
         else if (car.cost/12 < salary)
         {
             System.out.println("you managed to buy a car on credit");
-            return true;
+            human.get(tmp).car.Car("1","1","1",1,1);
+            return 2;
         }
         else
         {
             System.out.println("You couldn't buy a car, start earning better");
-            return false;
+            return 3;
         }
     }
 
-    public double getSalary()
-    {
+    public double getSalary() {
         System.out.println("Payment of the day: " + date);
         System.out.println("Value before returning value= " + salary);
         Deposit(100);
         System.out.println("Current Account status= " + salary);
+        date = date + 0.01;
+        if (date == 11.13) {
+            date = date - 1.12;
+        }
         return salary;
     }
     public boolean setSalary(double HowMuch)

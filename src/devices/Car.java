@@ -8,7 +8,8 @@ public class Car extends Device{
     int production_date = 2019;
     int cost = 3000;
     int production_date2 = 2019;
-
+    public void Car()
+    {}
     public void Car(String model, String producent, String color, int production_date, int cost)
     {
         model = this.model;

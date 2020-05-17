@@ -2,10 +2,8 @@ package devices;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import creatures.Animal;
 
-import javax.swing.text.Style;
 
 public class Human {
     public Human(int id, String name, double salary) {
@@ -17,8 +15,8 @@ public class Human {
     public Human() {
     }
 
-    int id = 0, tmp, a;
-    private double salary = 1000;
+    int id = 0, tmp, a, d;
+    private double salary = 100000;
     public String Name, Name2;
     public boolean created = false;
     double date = 11.05;
@@ -62,21 +60,16 @@ public class Human {
             System.out.println("Choose number");
             System.out.println("1. Buy Animal");
             System.out.println("2. Do something with your pet");
-            System.out.println("3. Check account balance");
-            System.out.println("4. Withdraw from account 500");
-            System.out.println("5. Withdraw from account 1500");
-            System.out.println("6. See your dream car");
-            System.out.println("7. Buy your dream car");
-            System.out.println("8. See your car");
-            System.out.println("9. compare two same cars");
-            System.out.println("10. ToString");
+            System.out.println("3. manage money");
+            System.out.println("4. manage cars");
+            System.out.println("5. Sell");
             System.out.print("Your Choose: ");
             a = scan.nextInt();
             System.out.println();
             switch (a) {
                 case 1: {
-                    animal.NewAnimal();
                     if(salary > 500) {
+                        animal.NewAnimal();
                         salary = salary - 500;
                     }else {
                         System.out.println("You don't have cash");
@@ -90,94 +83,122 @@ public class Human {
                 }
                 break;
                 case 3: {
-                    getSalary();
+                    Cash();
                     System.out.println();
                 }
                 break;
                 case 4: {
-                    setSalary(500);
+                    Cars();
                     System.out.println();
                 }
                 break;
                 case 5: {
-                    setSalary(15000);
-                    System.out.println();
-                }
-                break;
-                case 6: {
-                    getCar();
-                    System.out.println();
-                }
-                break;
-                case 7: {
-                    setCar();
-                    System.out.println();
-                }
-                break;
-                case 8: {
-                    getMyCar();
-                    System.out.println();
-                }
-                break;
-                case 9: {
-                    car.main();
-                    System.out.println();
-                }
-                break;
-                case 10: {
-                    car.main2();
+
                     System.out.println();
                 }
                 break;
                 default: {
-                    System.out.println("default");
                 }
                 break;
             }
         }while(a !=0);
     }
 
-    public void getMyCar()
-    {
-        if (setCar() == 1)
-        {
-            System.out.println("You have Car:");
-            getCar();
-        }
-        else if(setCar() == 2) {
-            System.out.println("You have Car on credit");
-            getCar();
-        }
-        else
-        {
-            System.out.println("You don't own a car");
-        }
+    public void setCar(){
+        car.NewCar();
     }
 
-    public void getCar()
+    public void Cars()
     {
-        car.Car("q","1","1",1,1);
+        do {
+            System.out.println();
+            System.out.println("Choose number");
+            System.out.println("1. See your dream car");
+            System.out.println("2. Buy your dream car");
+            System.out.println("3. See your car");
+            System.out.println("4. compare two same cars");
+            System.out.println("5. ToString");
+            System.out.println("0. Back");
+            System.out.print("Your Choose: ");
+            a = scan.nextInt();
+            System.out.println();
+            switch (a) {
+                case 1: {
+                    car.Cars();
+                    System.out.println();
+                }
+                break;
+                case 2: {
+                    if(salary > car.cost)
+                    {
+                        System.out.println("You managed to buy the car for cash");
+                        setCar();
+                    }else if(salary > car.cost/12)
+                    {
+                        System.out.println("you managed to buy a car on credit");
+                        setCar();
+                    }else {
+                        System.out.println("You don't have cash");
+                    }
+                    System.out.println();
+                }
+                break;
+                case 3: {
+                    car.GetMyCar();
+                    System.out.println();
+                }
+                break;
+                case 4: {
+                    car.main();
+                    System.out.println();
+                }
+                break;
+                case 5: {
+                    car.main2();
+                    System.out.println();
+                }
+                break;
+                default: {
+                }
+                break;
+            }
+        }while(a !=0);
     }
 
-    public int setCar(){
-        if (car.cost < salary)
-        {
-            System.out.println("You managed to buy the car for cash");
-            salary = salary - car.cost;
-            human.get(tmp).car.Car("1","1","1",1,1);
-            return 1;
-        }
-        else if (car.cost/12 < salary)
-        {
-            System.out.println("you managed to buy a car on credit");
-            human.get(tmp).car.Car("1","1","1",1,1);
-            return 2;
-        }
-        else
-        {
-            System.out.println("You couldn't buy a car, start earning better");
-            return 3;
-        }
+    public void Cash()
+    {
+        do {
+            System.out.println();
+            System.out.println("Choose number");
+            System.out.println("1. Check account balance");
+            System.out.println("2. Withdraw from account 500");
+            System.out.println("3. Withdraw from account 1500");
+            System.out.println("0. Back");
+            System.out.print("Your Choose: ");
+            d = scan.nextInt();
+            System.out.println();
+            switch (d) {
+                case 1: {
+                    getSalary();
+                    System.out.println();
+                }
+                break;
+                case 2: {
+                    setSalary(500);
+                    System.out.println();
+                }
+                break;
+                case 3: {
+                    setSalary(1500);
+                    System.out.println();
+                }
+                break;
+                default: {
+                }
+                break;
+            }
+        }while(d !=0);
+
     }
 
     public double getSalary() {

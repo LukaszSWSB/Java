@@ -54,8 +54,11 @@ public class Animal implements salleable, Feedable {
             System.out.println("Hello my pet " + animal.get(tmp).Name + " " + animal.get(tmp).Id);
         }
         do{
+            System.out.println();
+            System.out.println("Choose number");
         System.out.println("1. Feeder your pet");
         System.out.println("2. TakeForAWalk whit your pet");
+        System.out.println("0. Back");
         System.out.print("Your Choose: ");
         c = scan.nextInt();
         System.out.println();
@@ -75,7 +78,6 @@ public class Animal implements salleable, Feedable {
             }
             break;
             default: {
-                System.out.println("default");
             }
             break;
         }

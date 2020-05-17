@@ -1,8 +1,15 @@
-package devices;
+package creatures;
 
-public class Animal {
+import devices.Human;
+import devices.Human.salleable;
+
+public class Animal implements salleable, Feedable{
     final String species = "Dog";
     private double weight=20;
+
+    public Animal() {
+
+    }
 
     public boolean isLife()
     {
@@ -13,13 +20,6 @@ public class Animal {
         } else {
             System.out.println("The animal is alive");
             return true;
-        }
-    }
-    public Animal () {
-if (this.species.equals("Dog"))
-        {
-
-            this.weight = 20;
         }
     }
     public void feed()
@@ -43,4 +43,35 @@ if (this.species.equals("Dog"))
             System.out.println("RIP ANIMAL");
         }
     }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+
+    }
+
+    interface Edbile
+    {
+        void beEaten();
+    }
+}
+class FarmAnimal extends Animal implements Animal.Edbile {
+    public FarmAnimal(String species, double weight) {
+        super();
+    }
+
+    @Override
+    public void beEaten() {
+
+    }
+}
+class Pet extends Animal
+{
+    public Pet(String species, double weight) {
+        super();
+    }
+}
+interface Feedable
+{
+    double foodWeight = 10;
+    void feed();
 }

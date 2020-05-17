@@ -1,7 +1,6 @@
 package devices;
 
-import devices.Animal;
-import devices.Car;
+import creatures.Animal;
 
 public class Human {
     public Human() {
@@ -9,11 +8,11 @@ public class Human {
     }
     private double salary;
     double date = 11.05;
-    Animal pet = new Animal();
+    Animal pet;
     private Car car = new Car();
     double Cash;
 
-    public Boolean getMyCar()
+    public void getMyCar()
     {
         if (setCar() == true)
         {
@@ -23,7 +22,6 @@ public class Human {
         {
             System.out.println("You don't own a car");
         }
-        return true;
     }
 
     public void getCar()
@@ -77,5 +75,9 @@ public class Human {
     {
         this.salary = salary + HowMuch;
         return true;
+    }
+    public interface salleable
+    {
+        void sell(Human seller, Human buyer, Double price);
     }
 }

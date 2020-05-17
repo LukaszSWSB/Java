@@ -1,8 +1,7 @@
 package com.company;
 
-import devices.Animal;
+import creatures.Animal;
 import devices.Car;
-import devices.Device;
 import devices.Human;
 
 import java.util.Scanner;

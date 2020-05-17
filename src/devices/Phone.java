@@ -1,8 +1,14 @@
 package devices;
 
-public class Phone extends Device{
+import devices.Human.salleable;
+
+public class Phone extends Device implements salleable {
     @Override
     public void TurnOn() {
+
+    }
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
 
     }
 }

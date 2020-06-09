@@ -9,10 +9,11 @@ public class Car extends Device{
     final String producent = "Porsche";
     final String color = "Gold";
     final String color2 = "Gold";
+    Human human = new Human();
     int production_date = 2019;
     int cost = 3000;
     int production_date2 = 2019;
-    int Id = 0, tmp;
+    int Id = 0, tmp, e;
     public boolean created = false;
     Scanner scan = new Scanner(System.in);
     public static ArrayList<Car> car = new ArrayList();
@@ -57,7 +58,48 @@ public class Car extends Device{
     }
 
     void Sell() {
-
+        do {
+            System.out.println();
+            System.out.println("Choose number");
+            System.out.println("Sprawdz swoje auta");
+            System.out.println("Sprzedaj swoje auto kupujacemu");
+            System.out.print("Your Choose: ");
+            e = scan.nextInt();
+            System.out.println();
+            switch (e) {
+                case 1: {
+                    GetMyCar();
+                }
+                break;
+                case 2: {
+                    System.out.println("Enter the destination account ID: ");
+                    int tmp2=scan.nextInt();
+                    if (tmp2 == tmp)
+                    {
+                        System.out.println("Error this same ID");
+                        do{
+                            System.out.println("Enter the destination account ID: ");
+                            tmp2=scan.nextInt();
+                        }while(tmp2==tmp);
+                    }
+                    else {
+                        System.out.println("Good ID");
+                    }
+                    System.out.println("Ktore auto podaj id: ");
+                    Id = scan.nextInt();/*
+                    if (human.Salary() < 0)
+                        System.out.println("You dont have cash");
+                    else {
+                        account.get(tmp).bankAccount.setBalance(bankAccount.Balance.subtract(HowMuch));
+                    }
+                    account.get(tmp2).bankAccount.setBalance(bankAccount.Balance.add(HowMuch));*/
+                }
+                break;
+                default: {
+                }
+                break;
+            }
+        }while(e !=0);
     }
 
     void Cars()

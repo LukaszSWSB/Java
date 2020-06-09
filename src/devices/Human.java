@@ -22,7 +22,7 @@ public class Human {
     double date = 11.05;
     Animal pet;
     Animal animal = new Animal();
-    public static ArrayList<Car> garage = new ArrayList();
+    private Car car = new Car();
     public static ArrayList<Human> human = new ArrayList();
     double Cash;
     Scanner scan = new Scanner(System.in);
@@ -61,7 +61,7 @@ public class Human {
             System.out.println("1. Buy Animal");
             System.out.println("2. Do something with your pet");
             System.out.println("3. manage money");
-            /*System.out.println("4. manage cars");*/
+            System.out.println("4. manage cars");
             System.out.println("5. Sell");
             System.out.print("Your Choose: ");
             a = scan.nextInt();
@@ -88,8 +88,8 @@ public class Human {
                 }
                 break;
                 case 4: {
-                    /*Cars();
-                    System.out.println();*/
+                    Cars();
+                    System.out.println();
                 }
                 break;
                 case 5: {
@@ -104,7 +104,7 @@ public class Human {
         }while(a !=0);
     }
 
-   /* public void setCar(){
+    public void setCar(){
         car.NewCar();
     }
 
@@ -163,7 +163,7 @@ public class Human {
                 break;
             }
         }while(a !=0);
-    }*/
+    }
 
     public void Cash()
     {

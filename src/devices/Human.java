@@ -1,11 +1,13 @@
 package devices;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.Arrays;
+import com.sun.jdi.Value;
 import creatures.Animal;
 
 
-public class Human {
+public class Human extends Device {
     public Human(int id, String name, double salary) {
         this.id = id;
         this.Name = name;
@@ -14,18 +16,36 @@ public class Human {
 
     public Human() {
     }
-
-    int id = 0, tmp, a, d;
+    int id = 0,iD = 0, tmp, a, d, GarageSize, cost = 3000, production_date;
     private double salary = 100000;
-    public String Name, Name2;
+    public String Name, Name2, NameCar, model, producent, color;
     public boolean created = false;
-    double date = 11.05;
+    double date = 11.05, CostCars;
     Animal pet;
     Animal animal = new Animal();
-    private Car car = new Car();
+    Random random = new Random();
+   /* Car car = new Car();*/
+    public ArrayList<Car> garage = new ArrayList();
     public static ArrayList<Human> human = new ArrayList();
     double Cash;
     Scanner scan = new Scanner(System.in);
+
+    public ArrayList<Car> NewGarage(int GarageSize, double CostCars) {
+        this.CostCars = CostCars;
+        this.GarageSize = GarageSize;
+        System.out.println("ID: " + iD);
+        System.out.println("Name Car: ");
+        NameCar = scan.nextLine();
+        System.out.println("Production date: ");
+        production_date = scan.nextInt();
+        created = true;
+        if (created) {
+            garage.add(new Car(iD, NameCar, model, producent, color, production_date, cost));
+            iD++;
+            return garage;
+        }
+        return garage;
+    }
 
     public ArrayList<Human> NewPerson() {
         System.out.println("ID: " + id);
@@ -33,6 +53,14 @@ public class Human {
         Name = scan.nextLine();
         created = true;
         if (created) {
+            LinkedList m = new LinkedList();
+            Random generator = new Random();
+            int i = random.nextInt(10);
+            for(int j=i; j>0; j--) {
+                NewGarage(i*10,i*cost);
+            }
+            System.out.println("Garage size have "+GarageSize + "meters");
+            Value();
             human.add(new Human(id, Name, salary));
             id++;
             return human;
@@ -88,8 +116,8 @@ public class Human {
                 }
                 break;
                 case 4: {
-                    Cars();
-                    System.out.println();
+                    /*Cars();
+                    System.out.println();*/
                 }
                 break;
                 case 5: {
@@ -104,7 +132,7 @@ public class Human {
         }while(a !=0);
     }
 
-    public void setCar(){
+   /* public void setCar(){
         car.NewCar();
     }
 
@@ -163,7 +191,7 @@ public class Human {
                 break;
             }
         }while(a !=0);
-    }
+    }*/
 
     public void Cash()
     {
@@ -235,5 +263,14 @@ public class Human {
     public interface salleable
     {
         void sell(Human seller, Human buyer, Double price);
+    }
+    @Override
+    public void TurnOn() {
+
+    }
+
+    @Override
+    public void Value() {
+        System.out.println("The entire cost of all cars is "+ CostCars);
     }
 }

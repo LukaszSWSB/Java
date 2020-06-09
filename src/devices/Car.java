@@ -9,16 +9,26 @@ public class Car extends Device{
     final String producent = "Porsche";
     final String color = "Gold";
     final String color2 = "Gold";
-    int production_date = 2019;
+    int production_date;
     int cost = 3000;
     int production_date2 = 2019;
-    int Id = 0, tmp;
+    int Id = 0, tmp, iD = 0;
+    String NameCar;
     public boolean created = false;
     Scanner scan = new Scanner(System.in);
     public static ArrayList<Car> car = new ArrayList();
 
     public Car() {
 
+    }
+    public Car(int iD, String NameCar, String model, String producent, String color, int production_date, int cost) {
+        this.NameCar = NameCar;
+        this.iD = iD;
+        model = this.model;
+        producent = this.producent;
+        color = this.color;
+        this.production_date = production_date;
+        this.cost = cost;
     }
     public Car(int Id, String model, String producent, String color, int production_date, int cost)
     {
@@ -94,5 +104,9 @@ public class Car extends Device{
     @Override
     public void TurnOn() {
 
+    }
+
+    @Override
+    public void Value() {
     }
 }

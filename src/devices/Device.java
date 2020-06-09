@@ -4,6 +4,7 @@ public abstract class Device {
     String producer;
     String mode;
     int yearOfProduction;
+    Double value;
 
     Device()
     {
@@ -12,4 +13,6 @@ public abstract class Device {
         this.yearOfProduction = yearOfProduction;
     }
     public abstract void TurnOn();
+
+    public abstract void Value();
 }

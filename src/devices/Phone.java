@@ -7,6 +7,12 @@ public class Phone extends Device implements salleable {
     public void TurnOn() {
 
     }
+
+    @Override
+    public void Value() {
+
+    }
+
     @Override
     public void sell(Human seller, Human buyer, Double price) {
 

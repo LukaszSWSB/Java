@@ -14,7 +14,6 @@ public class Human extends Device /*implements Comparable <Car>*/ {
         this.Name = name;
         this.salary = salary;
     }
-
     public Human() {
     }
     int id = 0,iD = 0, tmp, a, d, GarageSize, cost = 3000;
@@ -27,6 +26,7 @@ public class Human extends Device /*implements Comparable <Car>*/ {
     Animal animal = new Animal();
     Random random = new Random();
    /* Car car = new Car();*/
+    Phone phone = new Phone();
     public ArrayList<Car> garage = new ArrayList();
     public static ArrayList<Human> human = new ArrayList();
     double Cash;
@@ -130,6 +130,11 @@ public class Human extends Device /*implements Comparable <Car>*/ {
                 break;
                 case 5: {
 
+                    System.out.println();
+                }
+                break;
+                case 6: {
+                    phone.TurnOn();
                     System.out.println();
                 }
                 break;

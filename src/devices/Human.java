@@ -19,9 +19,10 @@ public class Human extends Device /*implements Comparable <Car>*/ {
     }
     int id = 0,iD = 0, tmp, a, d, GarageSize, cost = 3000;
     private double salary = 100000;
-    public String Name, Name2, NameCar, model, producent, color, production_date;
+    public String Name, Name2, NameCar, model, producent, color;
     public boolean created = false;
     double date = 11.05, CostCars;
+    int  production_date;
     Animal pet;
     Animal animal = new Animal();
     Random random = new Random();
@@ -38,7 +39,7 @@ public class Human extends Device /*implements Comparable <Car>*/ {
         System.out.println("Name Car: ");
         NameCar = scan.nextLine();
         System.out.println("Production date: ");
-        production_date = scan.nextLine();
+        production_date = scan.nextInt();
         created = true;
         if (created) {
             garage.add(new Car(iD, NameCar, model, producent, color, production_date, cost));
@@ -63,20 +64,18 @@ public class Human extends Device /*implements Comparable <Car>*/ {
             }
             System.out.println("Garage size have "+GarageSize + "meters");
             Value();
-            /*int compere = Arrays.compare(garage, garage);
-            System.out.println(garage);*/
-            //Collections.sort(garage);
             human.add(new Human(id, Name, salary));
             id++;
             /*System.out.println(sorted);*/
+            //Arrays.sort(garage);
             return human;
         }
         return human;
     }
-    /*List<String> sorted = garage.parallelStream().sorted().map((Car) -> getProduction_date(production_date)).collect(Collectors.toList());*/
+    /*List<String> sorted = garage.parallelStream().sorted().map((Car) -> getProduction_date(production_date)).collect(Collectors.toList());
     public String getProduction_date(String production_date) {
         return this.production_date = production_date;
-    }
+    }*/
     public void Person()
     {
             System.out.println("Your ID:");

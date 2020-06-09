@@ -3,11 +3,12 @@ package devices;
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import com.sun.jdi.Value;
 import creatures.Animal;
 
 
-public class Human extends Device {
+public class Human extends Device /*implements Comparable <Car>*/ {
     public Human(int id, String name, double salary) {
         this.id = id;
         this.Name = name;
@@ -16,9 +17,9 @@ public class Human extends Device {
 
     public Human() {
     }
-    int id = 0,iD = 0, tmp, a, d, GarageSize, cost = 3000, production_date;
+    int id = 0,iD = 0, tmp, a, d, GarageSize, cost = 3000;
     private double salary = 100000;
-    public String Name, Name2, NameCar, model, producent, color;
+    public String Name, Name2, NameCar, model, producent, color, production_date;
     public boolean created = false;
     double date = 11.05, CostCars;
     Animal pet;
@@ -37,7 +38,7 @@ public class Human extends Device {
         System.out.println("Name Car: ");
         NameCar = scan.nextLine();
         System.out.println("Production date: ");
-        production_date = scan.nextInt();
+        production_date = scan.nextLine();
         created = true;
         if (created) {
             garage.add(new Car(iD, NameCar, model, producent, color, production_date, cost));
@@ -46,6 +47,7 @@ public class Human extends Device {
         }
         return garage;
     }
+
 
     public ArrayList<Human> NewPerson() {
         System.out.println("ID: " + id);
@@ -61,13 +63,20 @@ public class Human extends Device {
             }
             System.out.println("Garage size have "+GarageSize + "meters");
             Value();
+            /*int compere = Arrays.compare(garage, garage);
+            System.out.println(garage);*/
+            //Collections.sort(garage);
             human.add(new Human(id, Name, salary));
             id++;
+            /*System.out.println(sorted);*/
             return human;
         }
         return human;
     }
-
+    /*List<String> sorted = garage.parallelStream().sorted().map((Car) -> getProduction_date(production_date)).collect(Collectors.toList());*/
+    public String getProduction_date(String production_date) {
+        return this.production_date = production_date;
+    }
     public void Person()
     {
             System.out.println("Your ID:");
@@ -260,6 +269,12 @@ public class Human extends Device {
         this.salary = salary + HowMuch;
         return true;
     }
+
+/*    @Override
+    public int compareTo(Car o) {
+        return this.production_date.compareTo(o.production_date);
+    }*/
+
     public interface salleable
     {
         void sell(Human seller, Human buyer, Double price);

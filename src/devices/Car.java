@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Car extends Device{
-    final String model = "718 Cayman GT4";
+    final String model = "718 Cayman GaaaaaaaaaaaaT4";
     final String producent = "Porsche";
     final String color = "Gold";
     final String color2 = "Gold";

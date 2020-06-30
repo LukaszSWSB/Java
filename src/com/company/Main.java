@@ -34,9 +34,7 @@ public class Main {
                         System.out.println();
                     }
                     break;
-                    default: {
-                    }
-                    break;
+                    default: {}break;
                 }
 
             }while (b != 0) ;
